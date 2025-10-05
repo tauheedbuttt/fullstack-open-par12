@@ -1,0 +1,52 @@
+Script started on Sun Oct  5 19:45:49 2025
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hddocker ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+bbb207c7016a   redis:alpine               "docker-entrypoint.s…"   42 seconds ago   Up 41 seconds   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp     todo-backend-redis-1
+f7afc444c712   nginx                      "/docker-entrypoint.…"   16 minutes ago   Up 16 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+ab33841a3843   initialized-mongo          "docker-entrypoint.s…"   35 minutes ago   Up 35 minutes   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   40 minutes ago   Up 40 minutes   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hddocker exec [7mbbb207c7016a[27m[12D[27mb[27mb[27mb[27m2[27m0[27m7[27mc[27m7[27m0[27m1[27m6[27ma[12D-[2Cb207c7016a[12Di[2Cb207c7016a[12Dt[2Cb207c7016a[12D [2Cb207c7016a[12D[?2004l
+docker: 'docker exec' requires at least 2 arguments
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+See 'docker exec --help' for more information
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker exec -it bbb207c7016a bash[?2004l
+OCI runtime exec failed: exec failed: unable to start container process: exec: "bash": executable file not found in $PATH: unknown
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker exec -it bbb207c7016a bash    sh[?2004l
+/data # [6nredis-cli
+127.0.0.1:6379> [H[2J[0K127.0.0.1:6379> [16C[0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> [0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> [1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker exec -it bbb207c7016a sh[?2004l
+Error response from daemon: No such container: bbb207c7016a
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hddocker ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED             STATUS             PORTS                                           NAMES
+0acb867d782d   redis:alpine               "docker-entrypoint.s…"   22 minutes ago      Up 22 minutes      0.0.0.0:6370->6379/tcp, [::]:6370->6379/tcp     todo-backend-redis-1
+f7afc444c712   nginx                      "/docker-entrypoint.…"   42 minutes ago      Up 42 minutes      0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+ab33841a3843   initialized-mongo          "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   About an hour ago   Up About an hour   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004h[H[2J[0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [Kddocker psexec -it bbb207c7016a sh sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh [7m0[7ma[7mc[7mb867d782d[27m sh[12D[27m0[27ma[27mc[27mb[27m8[27m6[27m7[27md[27m7[27m8[27m2[27md[?2004l
+/data # [6nredis-cli
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "added_todos"
+127.0.0.1:6379> [0K127.0.0.1:6379> G[17C[0K127.0.0.1:6379> GE[18C[0K127.0.0.1:6379> GET[19C[0K127.0.0.1:6379> GET [0;90;49mkey[0m[20C[0K127.0.0.1:6379> GET a[0;90;49m key[0m[21C[0K127.0.0.1:6379> GET ad[0;90;49m key[0m[22C[0K127.0.0.1:6379> GET add[0;90;49m key[0m[23C[0K127.0.0.1:6379> GET adde[0;90;49m key[0m[24C[0K127.0.0.1:6379> GET added[0;90;49m key[0m[25C[0K127.0.0.1:6379> GET added_[0;90;49m key[0m[26C[0K127.0.0.1:6379> GET added_t[0;90;49m key[0m[27C[0K127.0.0.1:6379> GET added_to[0;90;49m key[0m[28C[0K127.0.0.1:6379> GET added_tod[0;90;49m key[0m[29C[0K127.0.0.1:6379> GET added_todo[0;90;49m key[0m[30C[0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+"1"
+127.0.0.1:6379> [0K127.0.0.1:6379> S[17C[0K127.0.0.1:6379> SE[18C[0K127.0.0.1:6379> SET[19C[0K127.0.0.1:6379> SET [0;90;49mkey value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-ti[0m[20C[0K127.0.0.1:6379> SET a[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-[0m[21C[0K127.0.0.1:6379> SET ad[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix[0m[22C[0K127.0.0.1:6379> SET add[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT uni[0m[23C[0K127.0.0.1:6379> SET adde[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT un[0m[24C[0K127.0.0.1:6379> SET added[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT u[0m[25C[0K127.0.0.1:6379> SET added_[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT [0m[26C[0K127.0.0.1:6379> SET added_t[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m[27C[0K127.0.0.1:6379> SET added_to[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXA[0m[28C[0K127.0.0.1:6379> SET added_tod[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EX[0m[29C[0K127.0.0.1:6379> SET added_todo[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|E[0m[30C[0K127.0.0.1:6379> SET added_todos[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|[0m[31C[0K127.0.0.1:6379> SET added_todos [0;90;49mvalue [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT[0m[32C[0K127.0.0.1:6379> SET added_todos 9[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EX[0m[33C[0K127.0.0.1:6379> SET added_todos 90[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|E[0m[34C[0K127.0.0.1:6379> SET added_todos 900[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|[0m[35C[0K127.0.0.1:6379> SET added_todos 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds[0m[36C[0K127.0.0.1:6379> SET added_todos 9001[36C
+OK
+127.0.0.1:6379> [0K127.0.0.1:6379> SET added_todos 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds[0m[36C[0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+"9001"
+127.0.0.1:6379> [0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+"9002"
+127.0.0.1:6379> [0K127.0.0.1:6379> D[17C[0K127.0.0.1:6379> DE[18C[0K127.0.0.1:6379> DEL[19C[0K127.0.0.1:6379> DEL [0;90;49mkey [key ...][0m[20C[0K127.0.0.1:6379> DEL a[0;90;49m key [key ...][0m[21C[0K127.0.0.1:6379> DEL ad[0;90;49m key [key ...][0m[22C[0K127.0.0.1:6379> DEL add[0;90;49m key [key ...][0m[23C[0K127.0.0.1:6379> DEL adde[0;90;49m key [key ...][0m[24C[0K127.0.0.1:6379> DEL added[0;90;49m key [key ...][0m[25C[0K127.0.0.1:6379> DEL added_[0;90;49m key [key ...][0m[26C[0K127.0.0.1:6379> DEL added_t[0;90;49m key [key ...][0m[27C[0K127.0.0.1:6379> DEL added_to[0;90;49m key [key ...][0m[28C[0K127.0.0.1:6379> DEL added_tod[0;90;49m key [key ...][0m[29C[0K127.0.0.1:6379> DEL added_todo[0;90;49m key [key ...][0m[30C[0K127.0.0.1:6379> DEL added_todos[0;90;49m key [key ...][0m[31C[0K127.0.0.1:6379> DEL added_todos[31C
+(integer) 1
+127.0.0.1:6379> [0K127.0.0.1:6379> DEL added_todos[0;90;49m key [key ...][0m[31C[0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+(nil)
+127.0.0.1:6379> [0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+"1"
+127.0.0.1:6379> 
+/data # [6nexit
+[1m[7m%[27m[1m[0m                                                                                    [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004heexit[?2004l
+
+Script done on Sun Oct  5 20:14:25 2025

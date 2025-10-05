@@ -1,0 +1,44 @@
+Script started on Sun Oct  5 20:15:19 2025
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004h[H[2J[0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [Krrer  ddocker ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED             STATUS             PORTS                                           NAMES
+ee2f5d0761ab   redis:alpine               "docker-entrypoint.s…"   19 seconds ago      Up 5 seconds       0.0.0.0:6370->6379/tcp, [::]:6370->6379/tcp     todo-backend-redis-1
+100f8974d85d   initialized-mongo          "docker-entrypoint.s…"   19 seconds ago      Up 5 seconds       0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+f7afc444c712   nginx                      "/docker-entrypoint.…"   46 minutes ago      Up 46 minutes      0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   About an hour ago   Up About an hour   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hq [H[2J[0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [Kddocker ps[9Dexit     docker exec -it 0acb867d782d sh sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh [7me[7me[7m2[7mf5d0761ab[27m sh[12D[27me[27me[27m2[27mf[27m5[27md[27m0[27m7[27m6[27m1[27ma[27mb[?2004l
+/data # [6nredis-cli
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> 
+/data # [6nexit
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker exec -it ee2f5d0761ab sh[31D                               [31Dddocker ls[?2004l
+docker: unknown command: docker ls
+
+Run 'docker --help' for more information
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker ls  ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED             STATUS             PORTS                                           NAMES
+5b8769a6ed70   redis:alpine               "docker-entrypoint.s…"   8 seconds ago       Up 7 seconds       0.0.0.0:6370->6379/tcp, [::]:6370->6379/tcp     todo-backend-redis-1
+2c1899a0d35b   initialized-mongo          "docker-entrypoint.s…"   8 seconds ago       Up 7 seconds       0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+f7afc444c712   nginx                      "/docker-entrypoint.…"   48 minutes ago      Up 48 minutes      0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   About an hour ago   Up About an hour   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker psl[1Cexec -it ee2f5d0761ab sh sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh [7m5[7mb[7m8[7m769a6ed70[27m sh[12D[27m5[27mb[27m8[27m7[27m6[27m9[27ma[27m6[27me[27md[27m7[27m0[?2004l
+/data # [6nk[Jredis-cli
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+(empty array)
+127.0.0.1:6379> [0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "added_todos"
+127.0.0.1:6379> [0K127.0.0.1:6379> G[17C[0K127.0.0.1:6379> GE[18C[0K127.0.0.1:6379> GET[19C[0K127.0.0.1:6379> GET [0;90;49mkey[0m[20C[0K127.0.0.1:6379> GET a[0;90;49m key[0m[21C[0K127.0.0.1:6379> GET ad[0;90;49m key[0m[22C[0K127.0.0.1:6379> GET add[0;90;49m key[0m[23C[0K127.0.0.1:6379> GET adde[0;90;49m key[0m[24C[0K127.0.0.1:6379> GET added[0;90;49m key[0m[25C[0K127.0.0.1:6379> GET added_[0;90;49m key[0m[26C[0K127.0.0.1:6379> GET added_t[0;90;49m key[0m[27C[0K127.0.0.1:6379> GET added_to[0;90;49m key[0m[28C[0K127.0.0.1:6379> GET added_tod[0;90;49m key[0m[29C[0K127.0.0.1:6379> GET added_todo[0;90;49m key[0m[30C[0K127.0.0.1:6379> GET added_todos[0;90;49m key[0m[31C[0K127.0.0.1:6379> GET added_todos[31C
+"1"
+127.0.0.1:6379> 
+/data # [6nkeys [J[J[J[J[Jexit
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hddocker s ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED             STATUS             PORTS                                           NAMES
+4105f7b6a77e   redis:alpine               "docker-entrypoint.s…"   5 seconds ago       Up 5 seconds       0.0.0.0:6370->6379/tcp, [::]:6370->6379/tcp     todo-backend-redis-1
+387c315bbabd   initialized-mongo          "docker-entrypoint.s…"   5 seconds ago       Up 5 seconds       0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+f7afc444c712   nginx                      "/docker-entrypoint.…"   49 minutes ago      Up 49 minutes      0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   About an hour ago   Up About an hour   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                                                                                                  [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker psexec -it 5b8769a6ed70 sh sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh  sh [7m4[7m1[7m0[7m5f7b6a77e[27m sh[12D[27m4[27m1[27m0[27m5[27mf[27m7[27mb[27m6[27ma[27m7[27m7[27me[?2004l
+/data # [6nredis-cli/data # redis-cli [J
+127.0.0.1:6379> [0K127.0.0.1:6379> k[17C[0K127.0.0.1:6379> ke[18C[0K127.0.0.1:6379> key[19C[0K127.0.0.1:6379> keys[20C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys *[22C
+1) "added_todos"
+127.0.0.1:6379> [0K127.0.0.1:6379> keys *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> keys [0;90;49mpattern[0m[21C
