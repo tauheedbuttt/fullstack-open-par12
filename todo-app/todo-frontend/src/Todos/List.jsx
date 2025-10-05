@@ -14,8 +14,7 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
   return (
     <>
       {todos
-        // eslint-disable-next-line react/prop-types
-        .map((todo) => (
+        ?.map((todo) => (
           <Todo
             key={todo.id}
             todo={todo}

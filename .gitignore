@@ -3,3 +3,4 @@ public
 Dockerfile
 mongo_data
 redis_data
+.env
