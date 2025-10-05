@@ -1,0 +1,38 @@
+Script started on Sun Oct  5 17:37:46 2025
+[1m[7m%[27m[1m[0m                                                                                                              [0m[27m[24m[Jmac@Macs-MacBook-Pro part12 % [K[?2004hexitecho "hello"[12Ddocker -v      -v[9Dcurl http://helsinki.fi -o output.html
+[K[A[30Cdocker -v                             [1B[K[A[39C   -v[9Decho "hello"[12Dexit        [8D    exitecho "hello"[12Ddocker -v      -v[9Dcurl http://helsinki.fi -o output.html[1B[K[K[A[30Cls                                    [1B[K[A[32Ccurl https://www.helsinki.fi/en[31Dgit remote add origin https://github.com/tauheedbuttt/fullstack-open-par12.git[1Bgit branch -M main[K
+git push -u origin main[K[A[1B[A[A[30Ccurl[17P[9Cwww.helsinki.fi/en                                               [1B[K[1B[K[A[A[61C[31Dls                             [29Dcurl http://helsinki.fi -o output.html[1B[K[A[30Cdocker -v                             [1B[K[A[39C   -v[9Decho "hello"[12Dexit        [8D    [7mdocker container run hello-world[27m[32D[27md[27mo[27mc[27mk[27me[27mr[27m [27mc[27mo[27mn[27mt[27ma[27mi[27mn[27me[27mr[27m [27mr[27mu[27mn[27m [27mh[27me[27ml[27ml[27mo[27m-[27mw[27mo[27mr[27ml[27md[?2004l[1B
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[1m[7m%[27m[1m[0m                                                                                                              [0m[27m[24m[Jmac@Macs-MacBook-Pro part12 % [K[?2004h[7mdocker run -it ubuntu bash[27m[26D[27md[27mo[27mc[27mk[27me[27mr[27m [27mr[27mu[27mn[27m [27m-[27mi[27mt[27m [27mu[27mb[27mu[27mn[27mt[27mu[27m [27mb[27ma[27ms[27mh[?2004l
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+[1A[2K7bdf644cff2e: Pulling fs layer [1B[1A[2K7bdf644cff2e: Downloading  1.049MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  2.097MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  3.146MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  4.194MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  5.243MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  6.291MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading   7.34MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  8.389MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  9.437MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  10.49MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  11.53MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  12.58MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  13.63MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  14.68MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  14.68MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  15.73MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  16.78MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  17.83MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  18.87MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  19.92MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  20.97MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  22.02MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  23.07MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  24.12MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  25.17MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  26.21MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  27.26MB/28.86MB[1B[1A[2K7bdf644cff2e: Downloading  28.86MB/28.86MB[1B[1A[2K7bdf644cff2e: Download complete [1B[1A[2K7bdf644cff2e: Extracting 1 s[1B[1A[2K7bdf644cff2e: Extracting 1 s[1B[1A[2K7bdf644cff2e: Extracting 1 s[1B[1A[2K7bdf644cff2e: Extracting 1 s[1B[1A[2K7bdf644cff2e: Pull complete [1BDigest: sha256:728785b59223d755e3e5c5af178fab1be7031f3522c5ccd7a0b32b80d8248123
+Status: Downloaded newer image for ubuntu:latest
+[?2004h]0;root@180946efd8d9: /root@180946efd8d9:/# mkdir [7m/usr/src/app[27m/usr/src/app
+[?2004l[?2004h]0;root@180946efd8d9: /root@180946efd8d9:/# touch [7m/usr/src/app/index.js[27m/usr/src/app/index.js
+[?2004l[?2004h]0;root@180946efd8d9: /root@180946efd8d9:/# [Kexit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                              [0m[27m[24m[Jmac@Macs-MacBook-Pro part12 % [K[?2004heexit[?2004l
+
+Script done on Sun Oct  5 17:40:29 2025
