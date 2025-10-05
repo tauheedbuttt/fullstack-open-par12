@@ -1,0 +1,9 @@
+Script started on Sun Oct  5 17:50:35 2025
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker start -i 180946efd8d9[28Dscript                      [22Ddocker start -i 180946efd8d9[?2004l
+[K]0;root@180946efd8d9: /root@180946efd8d9:/# lsscriptnano /usr/src/app/index.js[3Papt-get -y install nanonano /usr/src/app/index.jsscript[Knano /usr/src/app/index.jso[1P[1P[1P[1P[1@n[1@o[1@d[1@e
+[?2004lHello World
+[?2004h]0;root@180946efd8d9: /root@180946efd8d9:/# [Kexit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004heexit[?2004l
+
+Script done on Sun Oct  5 17:50:55 2025
