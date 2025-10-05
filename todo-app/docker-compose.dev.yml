@@ -38,17 +38,50 @@ services:
     image: todo-backend-dev
     build:
       context: .
-      dockerfile: dev.Dockerfile
+      dockerfile: ./todo-backend/dev.Dockerfile
     volumes:
-      - ./:/usr/src/app/
-    ports:
-      - 3000:3000
+      - ./:/usr/src/app/todo-backend-dev
     container_name: todo-backend-dev
     environment:
       - MONGO_URL=mongodb://root:example@mongo:27017/todo_backend
       - REDIS_URL=redis://redis:6379
       - DEBUG=todo-express-backend:*
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
    
+  app:
+    image: todo-front-dev
+    build:
+      context: . 
+      dockerfile: ./todo-frontend/dev.Dockerfile 
+    volumes:
+      - ./:/usr/src/app/todo-front-dev
+    container_name: todo-front-dev 
+    depends_on:
+      - server 
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8080/api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - server 
+      - app
 volumes:
   mongo_data:
   redis_data:
