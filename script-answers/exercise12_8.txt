@@ -1,0 +1,100 @@
+Script started on Sun Oct  5 19:31:55 2025
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hdocker commit f7afc444c712 hello-node-world[36Dexec -it f7afc444c712 bash          [10D[26Dcomm[P[P[16Chello-node-world[43D                                           [43Dddocker ls[?2004l
+docker: unknown command: docker ls
+
+Run 'docker --help' for more information
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hddocker ps[?2004l
+CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+f7afc444c712   nginx                      "/docker-entrypoint.…"   3 minutes ago    Up 3 minutes    0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         ecstatic_lalande
+ab33841a3843   initialized-mongo          "docker-entrypoint.s…"   21 minutes ago   Up 21 minutes   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+70f6537f203a   initialized-mongo:latest   "docker-entrypoint.s…"   27 minutes ago   Up 27 minutes   27017/tcp                                       focused_jennings
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004hq [H[2J[0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [Kddocker expsl[1Ccommit f7afc444c712 hello-node-world[36Dexec -it f7afc444c712 bash          [10D bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash bash [1C bash[7ma[7mb[7m3[7m3[7m8[7m41a3843[27m bash[12D[27ma[27mb[27m3[27m3[27m8[27m4[27m1[27ma[27m3[27m8[27m4[27m3[?2004l
+[?2004hroot@ab33841a3843:/# show dbs
+[?2004lbash: show: command not found
+[?2004hroot@ab33841a3843:/# mongosh
+[?2004l]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	68e29dc0f6b36830a84f87fd
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.8[0m
+Using MongoDB:		8.0.15
+[1m[33mUsing Mongosh[0m:		2.5.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+[1G[0J [1G[?2004h[1G[0Jtest> [7G[1;1H[0J[1G[0Jtest> [7Gshow dbs
+Uncaught [1m[31mMongoServerError[0m[1m[31m[Unauthorized][0m: Command listDatabases requires authentication
+[1G[0Jtest> [7G
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jtest> [7G
+[?2004l[?2004hroot@ab33841a3843:/# mongosh -u root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	68e29df86a1fb70b814f87fd
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.8[0m
+Using MongoDB:		8.0.15
+[1m[33mUsing Mongosh[0m:		2.5.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2025-10-05T16:10:54.080+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2025-10-05T16:10:54.080+00:00: We suggest setting the contents of sysfsFile to 0.
+   2025-10-05T16:10:54.080+00:00: vm.max_map_count is too low
+   2025-10-05T16:10:54.080+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7G[1;1H[0J[1G[0Jtest> [7Gd[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         60.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mtodo_backend[0m   40.00 KiB
+[1G[0Jtest> [7Gdb.todo_bak[1G[0Jtest> db.todo_ba[17Gckend.[1G[0Jtest> db.todo_backend[22G[1G[0Jtest> db.todo_backen[21G[1G[0Jtest> db.todo_backe[20G[1G[0Jtest> db.todo_back[19G[1G[0Jtest> db.todo_bac[18G[1G[0Jtest> db.todo_ba[17G[1G[0Jtest> db.todo_b[16G[1G[0Jtest> db.todo_[15G[1G[0Jtest> db.todo[14G[1G[0Jtest> db.tod[13G[1G[0Jtest> db.to[12G[1G[0Jtest> db.t[11G[1G[0Jtest> db.[10G[1G[0Jtest> db[9G[1G[0Jtest> d[8G[1G[0Jtest> [7Guse todo_backend
+switched to db todo_backend
+[1G[0Jtodo_backend> [15Gshow [1G[0Jtodo_backend> show[19G[1G[0Jtodo_backend> sho[18G[1G[0Jtodo_backend> sh[17G[1G[0Jtodo_backend> s[16G[1G[0Jtodo_backend> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId([32m'68e2988b98c607f36a4f87fe'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'68e2988b98c607f36a4f87ff'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jtodo_backend> [15Gdb.todos.create({})[1D[1G[0Jtodo_backend> db.todos.create[44m([49m{})[33G[1D[1G[0Jtodo_backend> db.todos.create([44m{[49m})[32G[1G[0Jtodo_backend> db.todos.create([44m{[49mt})[33G[1G[0Jtodo_backend> db.todos.create([44m{[49mte})[34G[1G[0Jtodo_backend> db.todos.create([44m{[49mtex})[35G[1G[0Jtodo_backend> db.todos.create([44m{[49mtext})[36G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m:})[37G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: })[38G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"})[39m[39G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"M})[39m[40G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mo})[39m[41G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mon})[39m[42G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mong})[39m[43G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongo})[39m[44G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongod})[39m[45G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb})[39m[46G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m})[47G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m,})[48G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, })[49G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, d})[50G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [36mdo[39m})[51G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, don})[52G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, done})[53G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m:})[54G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: })[55G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: t})[56G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: tr})[57G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: tru})[58G[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[59G[2C[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[61G
+Uncaught [1m[31mTypeError[0m: db.todos.create is not a function
+[1G[0Jtodo_backend> [15G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[61G[2D[1G[0Jtodo_backend> db.todos.create([44m{[49m[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[59G[4D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[55G[2D[4D[3D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [44m[32m"[49mMongodb"[39m, [33mdone[39m: [33mtrue[39m})[46G[7D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[39G[1D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb[44m"[39m[49m, [33mdone[39m: [33mtrue[39m})[38G[2D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[36G[4D[1D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m[44m}[49m)[31G[1D[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[30G[1G[0Jtodo_backend> db.todos.creat({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[29G[1G[0Jtodo_backend> db.todos.crea({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[28G[1G[0Jtodo_backend> db.todos.cre({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[27G[1G[0Jtodo_backend> db.todos.cr({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[26G[1G[0Jtodo_backend> db.todos.c({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[25G[1G[0Jtodo_backend> db.todos.({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[24G[1G[0Jtodo_backend> db.todos.i({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[25G[1G[0Jtodo_backend> db.todos.in({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[26G[1G[0Jtodo_backend> db.todos.ins({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[27G[1G[0Jtodo_backend> db.todos.inse({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[28G[1G[0Jtodo_backend> db.todos.inser({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[29G[1G[0Jtodo_backend> db.todos.insert({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m}[44m)[49m[30G[31C[1G[0Jtodo_backend> db.todos.insert({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[61G
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: [33mtrue[39m,
+  insertedIds: { [32m'0'[39m: ObjectId([32m'68e29e346a1fb70b814f87fe'[39m) }
+}
+[1G[0Jtodo_backend> [15G[1G[0Jtodo_backend> db.todos.insert({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[61G[1G[0Jtodo_backend> db.todos.create({[33mtext[39m: [32m"Mongodb"[39m, [33mdone[39m: [33mtrue[39m})[61G[1G[0Jtodo_backend> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId([32m'68e2988b98c607f36a4f87fe'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'68e2988b98c607f36a4f87ff'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'68e29e346a1fb70b814f87fe'[39m),
+    text: [32m'Mongodb'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jtodo_backend> [15G[1;1H[0J[1G[0Jtodo_backend> [15Ge[1G[0Jtodo_backend> [15G
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jtodo_backend> [15G
+[?2004l[?2004hroot@ab33841a3843:/# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                     [0m[27m[24m[Jmac@Macs-MacBook-Pro script-answers % [K[?2004heexit[?2004l
+
+Script done on Sun Oct  5 19:35:48 2025
