@@ -1,0 +1,78 @@
+services:
+  mongo:
+    image: initialized-mongo
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: todo_backend
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6370:6379
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  server:
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    image: todo-backend
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: ./todo-backend/Dockerfile
+    container_name: todo-backend
+    environment:
+      - MONGO_URL=mongodb://root:example@mongo:27017/todo_backend
+      - REDIS_URL=redis://redis:6379
+      - DEBUG=todo-express-backend:*
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  app:
+    image: todo-front
+    build:
+      context: .
+      dockerfile: ./todo-frontend/Dockerfile
+    container_name: todo-front
+    depends_on:
+      - server
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8080/api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - server
+      - app
